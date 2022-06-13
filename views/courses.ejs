@@ -1,0 +1,42 @@
+<h1>Math Courses</h1>
+<hr>
+<h2>
+  <thead>
+  <tr>
+      <th>Select a math course below.</th>
+  </tr>
+ </thead>
+</h2>
+<hr>
+<div class="mathCourses">
+  <ul>
+    <% courses.forEach((course, index)=> {  %>
+        <li>
+            <a href="/courses/<%= index %>">
+                <%= course[index] %>
+            </a>
+            <form action="/courses/<%= index %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+            </form>
+        </li>
+        <% }) %>
+</ul>
+
+  <form class="courses">
+    <table id="list">
+        <thead>
+         <tr>
+             <th>Select a math course below.</th>
+         </tr>
+        </thead>
+    
+        <tbody>
+          <% courses.forEach(function(index) { %>
+             <tr>
+               <td><%= courses[index] %></td>
+             </tr>
+          <% }); %>
+        </tbody>
+    </table>
+  </form>
+  </div>

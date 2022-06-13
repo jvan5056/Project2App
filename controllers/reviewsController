@@ -1,0 +1,23 @@
+const Video = require('../models/video');
+
+function create (req,res){
+  //1st find the video we're deling with in the DB
+  Video.findById(req.params.id, function(err, video) {
+      video.reviews.push(req.body);
+      video.save(function (err) {
+          if (err) {
+              console.log(err);
+          }
+
+          res.redirect(`/videos/${video._id}`);
+      });
+  }
+
+  );
+
+}
+
+
+module.exports = {
+    create
+}

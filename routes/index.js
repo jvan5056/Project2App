@@ -1,9 +1,39 @@
 const express = require('express')
-
 const router = express.Router()
 
+
+router.get('/', (req,res)=> {
+   res.render('index', {title: 'Home page'})
+})
+
+
+router.get('/algebra', (req,res)=> {
+   console.log('algebra')
+   res.render('algebra', {title:'Algebra page'})
+})
+
+router.get('/calculus', (req,res)=> {
+   res.render('calculus', {title:'Calculus page'})
+})
+
+router.get('/resources', (req,res)=> {
+   res.render('resources', {title:'Resources page'})
+})
+
+router.get('/calculator', (req,res)=> {
+   res.render('calculator', {title:'Calculator page'})
+})
+
+router.get('/locator', (req,res)=> {
+   res.render('locator', {title:'Locator page'})
+})
+
+router.get('/courses', (req,res)=> {
+   res.render('courses', {title:'Math Courses page'})
+})
+
 router.get('/videos', function(req,res,next){
-   res.redirect('/videos')
+   res.redirect('/views/videos/videos.ejs')
 })
 
 module.exports = router

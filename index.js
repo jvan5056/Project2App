@@ -10,6 +10,7 @@ require('./config/database');
 const indexRouter = require('./routes/index');
 const videosRouter = require('./routes/videos');
 const reviewsRouter = require('./routes/reviews');
+const coursesRouter = require('./routes/courses');
 
 const app = express();
 
@@ -29,7 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //not sure about this section
 app.use('/classroom', indexRouter);
 app.use('/videos', videosRouter);
-app.use('/classroom', reviewsRouter);
+app.use('/videos/reviews', reviewsRouter);
+app.use('/courses', coursesRouter);
 
 //catch 404 and forward to error handler
 
@@ -46,35 +48,9 @@ app.use(function(err, req, res, next){
     res.render('error');
 })
 
-
-
-app.get('/', (req,res)=>{
-    res.send('Welcome to MY PERSONAL MATH CLASSROOM default page: Use /classroom for home page')
-});
-
-app.get('/classroom', (req,res)=> {
-    res.render('index', {title: 'Home page'})
-})
-
-app.get('/algebra', (req,res)=> {
-    res.render('algebra', {title:'Algebra page'})
-})
-
-app.get('/calculus', (req,res)=> {
-    res.render('calculus', {title:'Calculus page'})
-})
-
-app.get('/videos', (req,res)=> {
-    res.render('videos', {title:'Videos page'})
-})
-
-app.get('/calculator', (req,res)=> {
-    res.render('calculator', {title:'Calculator page'})
-})
-
-app.get('/locator', (req,res)=> {
-    res.render('locator', {title:'Locator page'})
-})
+// app.get('/', (req,res)=>{
+//     res.send('Welcome to MY PERSONAL MATH CLASSROOM default page: Use /classroom for home page')
+// });
 
 app.listen(PORT,() => {
     console.log('App listening on port', PORT)

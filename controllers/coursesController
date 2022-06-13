@@ -1,0 +1,37 @@
+const courses = require('../seeds/seeds.js')
+
+let getAll = (req, res) =>{
+    res.render('/views/courses', {
+        course: courses.getAll()
+    })
+}
+
+// let getCourse = (req, res) =>{
+    
+//     let index = req.params.index
+//     let course = courses.getTodo(index)
+//     res.render('todos/show', { todo })
+// }
+
+// let renderNew = (req,res) => {
+//     res.render('todos/create')
+// }
+
+// let createTodo = (req, res) =>{
+//     console.log(req.body)
+//     todoDb.addTodo(req.body)
+//     res.redirect('/todos')
+// }
+
+// let deleteTodo = (req,res) => {
+//     todoDb.deleteTodos(req.params.index)
+//     res.redirect('/todos')
+// }
+
+module.exports = {
+    getAll
+    // getTodo,
+    // new: renderNew,
+    // createTodo,
+    // deleteTodo
+}

@@ -1,0 +1,27 @@
+<section id="video-show-page">
+    <div>Title: </div>
+    <div><%= video.title %></div>
+    <div>Creator: </div>
+    <div><%= video.creator %></div>
+    <div>Video Length: </div>
+    <div><%= video.length %></div>
+    <div>Video URL: </div>
+    <div><%= video.url %></div>
+    
+</section>
+
+<br><br><h2>Reviews</h2>
+
+<form id="add-review-form" method="POST" action="/videos/<%= video._id %>/reviews">
+    <label>Review:</label>
+    <textarea name="content"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <input type="submit" value="Add Review">
+</form>
