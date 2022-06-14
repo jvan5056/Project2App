@@ -1,7 +1,7 @@
 //module dependencies
-const app = require('../index');
+const app = require('../index'); //my server is called index
 
-const debug = require('debug')('mongoose-videos:server');
+const debug = require('debug')('Project2App:server');
 
 const http = require('http');
 

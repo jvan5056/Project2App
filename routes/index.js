@@ -1,10 +1,22 @@
 const express = require('express')
 const router = express.Router()
+const coursesCtrl = require('../controllers/coursesController')
 
 
-router.get('/', (req,res)=> {
-   res.render('index', {title: 'Home page'})
+router.get('/', (req,res, next)=> {
+   res.render('index', {title: 'My Personal Math Classroom'})
 })
+
+router.get('/classroom/newCourse', coursesCtrl.newCourse)
+
+
+
+
+
+
+
+
+
 
 
 router.get('/algebra', (req,res)=> {

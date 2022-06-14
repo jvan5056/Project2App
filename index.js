@@ -10,7 +10,7 @@ require('./config/database');
 const indexRouter = require('./routes/index');
 const videosRouter = require('./routes/videos');
 const reviewsRouter = require('./routes/reviews');
-const coursesRouter = require('./routes/courses');
+//const coursesRouter = require('./routes/courses');
 
 const app = express();
 
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/classroom', indexRouter);
 app.use('/videos', videosRouter);
 app.use('/videos/reviews', reviewsRouter);
-app.use('/courses', coursesRouter);
+//app.use('/courses', coursesRouter);
 
 //catch 404 and forward to error handler
 

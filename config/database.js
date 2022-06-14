@@ -1,17 +1,49 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/classroom',
-{ 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
-});
+console.log('These are my seeds!')
 
-//shortcut to mongoose.connection object
-const db = mongoose.connection;
+//connect to database
+mongoose.connect('mongodb+srv://jvanexel:jv_Huzzah89!@sei.tseo7.mongodb.net/SEI?retryWrites=true&w=majority'
+//mongodb://localhost:27017/my-personal-math-classroom'
+, {
+    useNewUrlParser: true
+})
 
-db.on('connected', function () {
-    console.log(`connected to MongoDB at ${db.host}: ${db.port}`)
-});
+const db = mongoose.connection
+
+db.on('connected',  () => {
+    console.log(`Connect to MongoDB at ${db.host}:${db.port} `)
+})
+//for above in server file require below
+//require('config/dataabase')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //seeds.js arrays below
 
 // //9 math courses array
