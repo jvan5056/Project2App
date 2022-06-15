@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>Index page</title>
     <!-- //add <link> later -->
 </head>
 <body>
-    <h1>Welcome to <%= title %></h1>
+    <h1>All my Courses!</h1>
     <p>Select the class you are studying!</p>
     <!-- link to new course page -->
+    <% allCourses.forEach(c => { %>
+        <div>
+           <a href="/classroom/algebra"><%= c.name %></a>
+           <a href=""><%= c.topic %></a>
+           <a href=""><%= c.image %></a>
+        </div>
+
+    <%})%>
+
+
     <a href="/classroom/newCourse"><button id="new-course-button">Create a new Course</button></a>
 </body>
 </html>

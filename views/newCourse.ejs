@@ -8,5 +8,23 @@
 </head>
 <body>
     <h1>This is our new course page</h1>
+    <form id="new-course-form" action="/classroom" method="POST">
+        <h4>Add a New Course!</h4>
+        <label>Name:</label>
+        <input type="text" name="name"><br>
+        <label>Topic:</label>
+        <input type="text" name="topic"><br>
+        <label>Image:</label>
+        <input type="text" name="image"><br>
+        <label>Lesson:</label>
+        <input type="text" name="lesson"><br>
+        <label>Reference:</label>
+        <input type="text" name="reference"><br>
+        <label>Example:</label>
+        <input type="text" name="example"><br>
+        <label>Video:</label>
+        <input type="text" name="videoURL"><br>
+        <input type="submit" value="Create course">
+    </form>
 </body>
 </html>

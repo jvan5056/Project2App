@@ -15,7 +15,7 @@ db.on('connected',  () => {
     console.log(`Connect to MongoDB at ${db.host}:${db.port} `)
 })
 //for above in server file require below
-//require('config/dataabase')
+//require('config/database')
 
 
 

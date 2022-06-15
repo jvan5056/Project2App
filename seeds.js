@@ -43,21 +43,29 @@ require('./config/database')
 //goes in controllers folder in given controller.js file
 const Course = require('./models/course') //
 
+const data = require('./seeds/seeds.json')
 function createCourse(){
-    let newCourse = new Course({
-        name: "AlgebraTwo", //req.body.name
-        topic: "Conic Sections", //req.body.topic
-        image: "https://images.app.goo.gl/5d44aXLwa4Jg6yBC8",
-        lesson: "Exponential expressions are algebraic expressions with a coefficient, one or more variables, and one or more exponents. For example, in the expression 3x ^ 4 or 3*x^4,-3 is the coefficient-x is the base-4 is the exponent OR 3 is multiplied by x, 4 times, = 3 * (x * x * x * x). An expression can also be raised to an exponent. For example, for (3x)^4 or 3x ^ 4,the expression 3xis multiplied by itself 4 times:= 3x * 3x * 3x * 3x = 81x. Notice how 3x^4 does not equal (3x)^4!",
-        reference: "https://www.khanacademy.org/test-prep/sat/x0a8c2e5f:untitled-652/x0a8c2e5f:passport-to-advanced-math-lessons-by-skill/a/gtp--sat-math--article--radicals-and-rational-exponents--lesson",
-        example: "https://images.app.goo.gl/sj1J5yKQvikrUEir9",
-        video: "https://www.youtube.com/watch?v=fvUyjBpinv8"
+    Course.insertMany(data).then(function (docs) {
+        console.log(docs);
     })
+    .catch(function (err) {
+        console.log(err);
+    });
+   
+    // let newCourse = new Course({
+    //     name: "AlgebraTwo", //req.body.name
+    //     topic: "Conic Sections", //req.body.topic
+    //     image: "https://images.app.goo.gl/5d44aXLwa4Jg6yBC8",
+    //     lesson: "Exponential expressions are algebraic expressions with a coefficient, one or more variables, and one or more exponents. For example, in the expression 3x ^ 4 or 3*x^4,-3 is the coefficient-x is the base-4 is the exponent OR 3 is multiplied by x, 4 times, = 3 * (x * x * x * x). An expression can also be raised to an exponent. For example, for (3x)^4 or 3x ^ 4,the expression 3xis multiplied by itself 4 times:= 3x * 3x * 3x * 3x = 81x. Notice how 3x^4 does not equal (3x)^4!",
+    //     reference: "https://www.khanacademy.org/test-prep/sat/x0a8c2e5f:untitled-652/x0a8c2e5f:passport-to-advanced-math-lessons-by-skill/a/gtp--sat-math--article--radicals-and-rational-exponents--lesson",
+    //     example: "https://images.app.goo.gl/sj1J5yKQvikrUEir9",
+    //     video: "https://www.youtube.com/watch?v=fvUyjBpinv8"
+    // })
 
-    newCourse.save( () => console.log('new course created'))
+    // newCourse.save( () => console.log('new course created'))
        //await newCourse.save()
 }
-//createCourse()
+createCourse()
 
 function findCourse(){
     let algebra = Course.findOne({ name: "Algebra" }, (err, course) => {

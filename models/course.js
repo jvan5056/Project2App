@@ -14,3 +14,5 @@ const courseSchema = new Schema({
 
 const Course = mongoose.model('Course', courseSchema)
 // //next we can use functions on this model in seeds.js root file...see monngoose documentation..all are asynchronous!!
+//must export the model to use in controller
+module.exports = Course

@@ -3,11 +3,15 @@ const router = express.Router()
 const coursesCtrl = require('../controllers/coursesController')
 
 
-router.get('/', (req,res, next)=> {
-   res.render('index', {title: 'My Personal Math Classroom'})
-})
+// router.get('/', (req,res)=> {
+//    res.render('index', {title: 'My Personal Math Classroom'})
+// })
 
-router.get('/classroom/newCourse', coursesCtrl.newCourse)
+router.get('/', coursesCtrl.index)
+
+router.get('/newCourse', coursesCtrl.newCourse)
+
+router.post('/', coursesCtrl.createCourse)
 
 
 

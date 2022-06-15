@@ -31,13 +31,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/classroom', indexRouter);
 app.use('/videos', videosRouter);
 app.use('/videos/reviews', reviewsRouter);
-//app.use('/courses', coursesRouter);
+//app.use('/classroom/newCourse', indexRouter);
 
 //catch 404 and forward to error handler
 
-app.use(function(req,res,next){
-    next(createError(404));
-});
+// app.use(function(req,res,next){
+//     next(createError(404));
+// });
 
 //error handler
 
