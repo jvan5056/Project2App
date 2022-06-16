@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//not sure about this section
+
 app.use('/classroom', indexRouter);
 app.use('/videos', videosRouter);
 app.use('/videos/reviews', reviewsRouter);
@@ -48,9 +48,6 @@ app.use(function(err, req, res, next){
     res.render('error');
 })
 
-// app.get('/', (req,res)=>{
-//     res.send('Welcome to MY PERSONAL MATH CLASSROOM default page: Use /classroom for home page')
-// });
 
 app.listen(PORT,() => {
     console.log('App listening on port', PORT)

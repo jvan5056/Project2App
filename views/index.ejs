@@ -9,16 +9,17 @@
 </head>
 <body>
     <h1>All my Courses!</h1>
-    <p>Select the class you are studying!</p>
+    <p>Select one course you are studying!</p>
     <!-- link to new course page -->
+    <ul>
     <% allCourses.forEach(c => { %>
-        <div>
-           <a href="/classroom/algebra"><%= c.name %></a>
-           <a href=""><%= c.topic %></a>
-           <a href=""><%= c.image %></a>
-        </div>
+        <% console.log(c)%>
+        <li id="courses-items">
+           <a href="/classroom/<%= c._id %>"> Course: <%= c.name %> Topic: <%= c.topic %> Image: <%= c.image %></a><br>
+        </li>
 
     <%})%>
+    </ul>
 
 
     <a href="/classroom/newCourse"><button id="new-course-button">Create a new Course</button></a>

@@ -14,17 +14,8 @@ router.get('/newCourse', coursesCtrl.newCourse)
 router.post('/', coursesCtrl.createCourse)
 
 
-
-
-
-
-
-
-
-
-
 router.get('/algebra', (req,res)=> {
-   console.log('algebra')
+   //console.log('algebra')
    res.render('algebra', {title:'Algebra page'})
 })
 
@@ -51,5 +42,7 @@ router.get('/courses', (req,res)=> {
 router.get('/videos', function(req,res,next){
    res.redirect('/views/videos/videos.ejs')
 })
+
+router.get('/:id', coursesCtrl.showCourse)
 
 module.exports = router
