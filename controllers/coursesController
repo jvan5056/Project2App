@@ -7,52 +7,54 @@ const Course = require('../models/course')
 // }
 
 
-
+//create and show new course
 let newCourse = (req,res) => {
-    console.log('newCourse function ran!')
     res.render('newCourse')
 }
 
 let createCourse = (req, res) =>{
-    console.log('createCourse function ran')
     let newCourse = new Course(req.body)
     newCourse.save(() => console.log('New course was saved'))
     res.redirect('/classroom')
 }
 
 //show each course
-//how do I async an arrow function?
 let index = async (req, res) =>{
-    console.log('Our index function ran.')
     let allCourses = await Course.find({});
     res.render('index', {allCourses})
 }
 
 let showCourse = (req,res) => {
-    console.log('show function ran')
-    console.log(req.params.id)
     Course.findById(req.params.id).then((course) =>{
         console.log(course)
         res.render('courseDetail', {course})
     })
 }
 
+//update a course
+let updateCourse = (req,res) => {
+    console.log('update function ran');
+    console.log(req.params.id);
+    console.log(req.body);
+    Course.findByIdAndUpdate(req.params.id, req.body).then((course) =>{
+        res.redirect(`/classroom/${req.params.id}`)
+    })
+    res.redirect(`/classroom/${req.params.id}`);
+ }
 
-// let updateTodo = (req,res) => {
-//     todoDb.updateTodos(req.params.index)
-//     res.redirect('/todos')
-// }
+//delete a course
+let deleteCourse = (req,res) => {
+    console.log('delete function ran!')
+    Course.deleteById(req.params.id)
+    res.redirect('/classroom')
+}
 
-// let deleteTodo = (req,res) => {
-//     todoDb.deleteTodos(req.params.index)
-//     res.redirect('/todos')
-// }
 
 module.exports = {
     newCourse,
     createCourse,
     index,
-    showCourse
-    //updateCourse,
-    // deleteCourse
+    showCourse,
+    updateCourse,
+    deleteCourse
 }
