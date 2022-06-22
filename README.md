@@ -8,6 +8,7 @@ title: My Personal Math Classroom
 ---
 
 ## Project Choice - Math Classroom App
+##Github:: https://github.com/jvan5056/Project2App/
 
 ## Project Description 
 > This is the My Personal Math Classroom App. Users log in to create there own classroom where they can track progress, view math subject material, get resources, track there grades, turn in assignments, get math practice, and even lookup local wifi hotspots. 
@@ -39,7 +40,7 @@ CSS, HTML, Javascript, Express, Node, MongoDb, Mongoose
 
 *userSchema (name, password)
 *commentsSchema (name, date, rating, comment)
-*assignmentSchema (name, date, type, category, assignmentName)
+*courseSchema (courseName, topic, image, lesson, reference, example, video)
 
 ## List of routes
 
@@ -47,14 +48,14 @@ CSS, HTML, Javascript, Express, Node, MongoDb, Mongoose
 -POST user info
 -PUT/PATCH user info
 -DELETE user info
--GET user assignments
--POST user assignments
--PUT/PATCH user assignments
--DELETE user assignments
--GET user grades
--POST user grades
--PUT/PATCH user grades
--DELETE user grades
+-GET user videos
+-POST user videos
+-PUT/PATCH user videos
+-DELETE user videos
+-GET user topics
+-POST user topics
+-PUT/PATCH topics
+-DELETE user topics
 -GET user comments and ratings
 -POST user comments and ratings
 -PUT/PATCH user comments and ratings
@@ -62,4 +63,11 @@ CSS, HTML, Javascript, Express, Node, MongoDb, Mongoose
 
 
 ## Wireframes
-<img width="1440" alt="Project 2 wireframe" src="/images/My First Board - Placeholders.jpg">
+<img width="1440" alt="Project 2 AuthPage" src="https://imgur.com/sBWx3O3">
+<img width="1440" alt="Project 2 CoursesPage" src="https://imgur.com/Yk0is18">
+<img width="1440" alt="Project 2 TopicsPage" src="https://imgur.com/1qu2lfX">
+<img width="1440" alt="Project 2 DetailsPage" src="https://imgur.com/E61C2xI">
+<img width="1440" alt="Project 2 LessonEditPage" src="https://imgur.com/eSnS1d4">
+<img width="1440" alt="Project 2 VideoPage" src="https://imgur.com/G8Vo5ro">
+<img width="1440" alt="Project 2 VideoComments" src="https://imgur.com/udNmK7l">
+
