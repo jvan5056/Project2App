@@ -13,6 +13,7 @@ router.get('/newCourse', coursesCtrl.newCourse)
 
 router.post('/', coursesCtrl.createCourse)
 
+router.get('/study', coursesCtrl.indexSubjects)
 
 router.get('/algebra', (req,res)=> {
    res.render('algebra', {title:'Algebra page'})

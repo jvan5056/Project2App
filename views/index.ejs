@@ -8,12 +8,10 @@
     <!-- //add <link> later -->
 </head>
 <body>
-    <h1>All my Courses!</h1>
-    <p>Select one course you are studying!</p>
-    <!-- link to new course page -->
+    <h1>All Courses!</h1>
+    <p>Select one course to review details, edit, or delete!</p>
     <ul>
     <% allCourses.forEach(c => { %>
-        <% console.log(c)%>
         <li id="courses-items">
            <a href="/classroom/<%= c._id %>"> Course: <%= c.name %> Topic: <%= c.topic %> Image: <%= c.image %></a><br>
         </li>

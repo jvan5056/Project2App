@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-console.log('These are my seeds!')
+console.log('My seeds are in MongoDB!')
 
 //connect to database
 mongoose.connect('mongodb+srv://jvanexel:jv_Huzzah89!@sei.tseo7.mongodb.net/SEI?retryWrites=true&w=majority'

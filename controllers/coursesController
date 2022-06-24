@@ -1,11 +1,16 @@
 const Course = require('../models/course')
 
-// let getAll = (req, res) =>{
-//     res.render('/views/courses', {
-//         course: courses.getAll()
-//     })
-// }
+//array for indexSubject function
+const subjects = ['Algebra 1', 'Algebra 2','Geometry', 'Precalculus', 'Calculus',
+ 'AP Calculus', 'Statistics', 'AP Statistics', 'AMDM'];
 
+//show each subject on study page
+let indexSubjects = async (req, res) =>{
+    let allSubjects = await subjects.filter(subject => (typeof subject === "string"))
+    console.log('all subjects:', allSubjects)
+    res.render('study', {allSubjects})
+    //res.render('study', {subjects})
+}
 
 //create and show new course
 let newCourse = (req,res) => {
@@ -39,18 +44,19 @@ let updateCourse = (req,res) => {
     Course.findByIdAndUpdate(req.params.id, req.body).then((course) =>{
         res.redirect(`/classroom/${req.params.id}`)
     })
-    res.redirect(`/classroom/${req.params.id}`);
  }
 
 //delete a course
 let deleteCourse = (req,res) => {
     console.log('delete function ran!')
-    Course.deleteById(req.params.id)
-    res.redirect('/classroom')
+    Course.findByIdAndDelete(req.params.id).then(() => {
+      res.redirect('/classroom') 
+    })
 }
 
 
 module.exports = {
+    indexSubjects,
     newCourse,
     createCourse,
     index,

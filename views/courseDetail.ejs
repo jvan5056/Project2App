@@ -4,33 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>course Details page</title>
+    <title>Course Details page</title>
 </head>
 <body>
     
     <h1>Course details page</h1>
     <a href="/classroom">Go Back</a>
-    <h2>Course: <%= course.name%></h2>
-    <h2>Topic: <%= course.topic%></h2>
-    <h2>Image: <%= course.image%></h2>
-    <!-- <img src="<%= course.image %>"> -->
-    <h2>Lesson: <%= course.lesson%></h2>
-    <h2>Reference: <%= course.reference%></h2>
-    <h2>Example: <%= course.example%></h2>
-    <h2>Video: <%= course.video%></h2>
+    <h2>Course: <%= course.name %></h2>
+    <h2>Topic: <%= course.topic %></h2>
+    <h2>Image: <%= course.image %></h2>
+    <h2>Lesson: <%= course.lesson %></h2>
+    <h2>Reference: <%= course.reference %></h2>
+    <h2>Example: <%= course.example %></h2>
+    <h2>Video: <%= course.video %></h2>
 
-<!-- UPDATE FORM -->
-    <form action="/classroom/<%= course._id?_method=PUT %>" method="POST">
+    <form action="/classroom/<%= course._id %>?_method=PUT" method="POST" id="course-update-form">
         Image:<input name="image" type="text">
         Lesson:<input name="lesson" type="text">
         Reference:<input name="reference" type="text">
         Example:<input name="example" type="text">
         <input type="submit" value="Edit Course">
+        <p class="update-note">**Entries left blank will update to blank/empty entries**</p>
     </form>
 
-    <!-- DELETE FORM -->
-    <form action="/classroom/<%= course._id?_method=DELETE %>" method="POST">
-        <input type="submit" value="Delete Course">
+    <form action="/classroom/<%= course._id %>?_method=DELETE" method="POST" id="course-delete-form">
+        <input type="submit" value="Delete">
     </form>
 
 </body> 
