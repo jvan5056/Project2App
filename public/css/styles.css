@@ -1,0 +1,44 @@
+/* see "Node.js Express EJS Layouts and Partials Tutorial  by Raddy on YouTube for CSS examples" */
+
+body{
+    background-color: #eee;
+    font-size: 26px;
+}
+
+.wrapper{
+    width: 800px;
+    margin: 0 auto;
+    background-color: #cccc;
+    padding: 10px;
+}
+
+header, footer {
+    background-color: ghostwhite;
+    padding: 20px;
+}
+
+
+
+/* Resource page css*/
+.resources-buttons button{
+    background-color: blue;
+    font-size: 35px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 30px;
+    border-color: #eee;
+    color: #eee
+}
+
+/* classroom/study - Subjects page css*/
+.btn{
+    background-color: blue;
+    font-size: 35px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 30px;
+    border-color: #eee;
+    color: #eee
+}
+
+/* Resource page css*/
